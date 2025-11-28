@@ -1,0 +1,36 @@
+name: visitor-engagement-tracker
+
+on:
+  push:
+  workflow_dispatch: {}
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Record event
+        run: |
+          python - << 'PY'
+import os, json, datetime
+os.makedirs('data', exist_ok=True)
+path = 'data/engagement.json'
+try:
+    with open(path, 'r') as f:
+        data = json.load(f)
+except Exception:
+    data = []
+entry = { 'ts': datetime.datetime.utcnow().isoformat(), 'actor': os.environ.get('GITHUB_ACTOR') }
+data.append(entry)
+with open(path, 'w') as f:
+    json.dump(data, f, indent=2)
+print('Wrote engagement entry')
+PY
+      - name: Commit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/engagement.json
+          git commit -m "chore: update engagement log" || echo 'No changes'
+          git push
+
