@@ -1,0 +1,40 @@
+name: dynamic-stats-updater
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Update stats
+        env:
+          OWNER: 'ManoharKonala'
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+        run: |
+          python scripts/update_stats.py --out data/stats.json
+      - name: Analyze Repos (commit-level)
+        env:
+          OWNER: 'ManoharKonala'
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+        run: |
+          python scripts/analyze_repos.py --owner ManoharKonala --out_json data/analysis.json --out_md data/analysis.md
+      - name: Run Game Logic
+        run: |
+          python scripts/game_logic.py --in data/analysis.json --out data/game_state.json || true
+      - name: Commit data
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/stats.json data/analysis.json data/analysis.md data/game_state.json || true
+          git commit -m "chore: update stats & analysis & game state" || echo 'No changes to commit'
+          git push
