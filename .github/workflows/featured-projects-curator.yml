@@ -10,24 +10,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
+
       - name: Install dependencies
         run: pip install -r requirements.txt
+
       - name: Curate featured projects
         env:
           OWNER: 'ManoharKonala'
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
         run: |
           python - << 'PY'
-import json, os
+import json
+import os
 from github import Github
+
 gh = Github(os.environ.get('GITHUB_TOKEN'))
 user = gh.get_user(os.environ.get('OWNER'))
+
 repos = list(user.get_repos())
 repos.sort(key=lambda r: (r.stargazers_count, r.forks_count), reverse=True)
+
 featured = []
 for r in repos[:6]:
     featured.append({
@@ -37,11 +44,15 @@ for r in repos[:6]:
         'forks_count': r.forks_count,
         'description': r.description or ''
     })
+
 os.makedirs('data', exist_ok=True)
+
 with open('data/projects.json', 'w') as f:
     json.dump({'featured': featured}, f, indent=2)
+
 print('Wrote data/projects.json')
 PY
+
       - name: Commit
         run: |
           git config user.name 'github-actions[bot]'
@@ -49,4 +60,3 @@ PY
           git add data/projects.json
           git commit -m "chore: update featured projects" || echo 'No changes to commit'
           git push
-
