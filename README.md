@@ -1,101 +1,196 @@
-# Konala Venkata Rama Manohar — Elite GitHub Profile
+<div align="center">
 
-## 👋 About me
-**Konala Venkata Rama Manohar** (GitHub: `@ManoharKonala`) — Pulse. Build. Roar.
+![Banner](assets/banner-typed.gif)
 
-A compact, production-ready GitHub profile scaffold with a unique interactive terminal-based visitor experience that updates automatically via GitHub Actions. This profile focuses on showcasing your best work, your story, and the unique interactive strength of an in-readme terminal, backed by automation.
+### **AI & Data Engineering Student** | Building scalable ML pipelines & real-time systems
 
----
+[![GitHub followers](https://img.shields.io/github/followers/ManoharKonala?style=for-the-badge&labelColor=0b0f1a&color=00e6ff)](https://github.com/ManoharKonala)
+[![GitHub stars](https://img.shields.io/github/stars/ManoharKonala?style=for-the-badge&labelColor=0b0f1a&color=ff2d95)](https://github.com/ManoharKonala)
+[![Website](https://img.shields.io/badge/Website-v0--manohar--konala.vercel.app-00e6ff?style=for-the-badge&labelColor=0b0f1a)](https://v0-manohar-konala.vercel.app/)
+[![Email](https://img.shields.io/badge/Email-konalavrmanohar%40gmail.com-ff2d95?style=for-the-badge&labelColor=0b0f1a)](mailto:konalavrmanohar@gmail.com)
 
-## ✨ Unique Factor — INTERACTIVE TERMINAL SIMULATOR
-This profile uses an interactive, auto-generated SVG terminal that imports latest stats and recent commits from your GitHub repos. The terminal reacts to visitor interactions (via pre-generated SVG updates and advanced GitHub Actions). Implemented features:
-- `whoami` → Bio and background.
-- `ls -la projects` → A curated project list with short descriptions.
-- `cat skills.json` → Machine-readable skillset.
-- `git log` → Recent activity summary.
-- `./run_portfolio.sh` → Runs a pre-generated showcase animation (SVG/GIF).
-- `sudo make-me-a-sandwich` → A playful easter egg inserted by the `easter-egg-generator` workflow.
-
-> NOTE: GitHub READMEs don't allow inline JS execution for security reasons. To achieve the interactive effect, we generate an animated SVG and update it on a schedule with GitHub Actions.
+</div>
 
 ---
 
-## 🚀 What's included
-- `README.md` — this file with an embedded terminal (SVG) and full documentation
-- `.github/workflows/` — 5 automated workflows to maintain dynamic content
-- `assets/terminal/` — SVG/HTML/CSS sources and generated terminal asset
-- `scripts/` — Python scripts that call GitHub API to fetch data, build assets and update README
-- `data/` — generated JSON data produced by scripts
-- `tests/` — pytest tests for core script functions
+## 🚀 Quick Links
+
+<div align="center">
+
+[![⭐ Star my top repo](https://img.shields.io/badge/⭐_Star_my_top_repo-MCP--Server-00e6ff?style=for-the-badge&logo=github&labelColor=0b0f1a)](https://github.com/ManoharKonala/MCP-Server)
+[![▶️ Live Demos](https://img.shields.io/badge/▶️_Live_Demos-Portfolio-ff2d95?style=for-the-badge&labelColor=0b0f1a)](https://v0-manohar-konala.vercel.app/)
+[![📧 Hire / Collab](https://img.shields.io/badge/📧_Hire_/_Collab-Contact-00e6ff?style=for-the-badge&labelColor=0b0f1a)](mailto:konalavrmanohar@gmail.com)
+
+</div>
 
 ---
 
-## 🧭 Quickstart
-1. Ensure `GITHUB_TOKEN` is available for Actions (Actions set GITHUB_TOKEN automatically). If you run locally, set `GITHUB_TOKEN`:
+## 💻 Tech Stack
 
-```bash
-export GITHUB_TOKEN=ghp_xxx
-```
+### **Languages**
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white&labelColor=0b0f1a)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white&labelColor=0b0f1a)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black&labelColor=0b0f1a)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white&labelColor=0b0f1a)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white&labelColor=0b0f1a)
 
-2. Install dependencies:
+### **ML & Data**
+![XGBoost](https://img.shields.io/badge/XGBoost-FF6600?style=flat-square&logo=xgboost&logoColor=white&labelColor=0b0f1a)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white&labelColor=0b0f1a)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white&labelColor=0b0f1a)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white&labelColor=0b0f1a)
+![SHAP](https://img.shields.io/badge/SHAP-FF6B6B?style=flat-square&labelColor=0b0f1a)
 
-```bash
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
+### **Cloud & Infrastructure**
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white&labelColor=0b0f1a)
+![Azure](https://img.shields.io/badge/Azure-0078D4?style=flat-square&logo=microsoft-azure&logoColor=white&labelColor=0b0f1a)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white&labelColor=0b0f1a)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white&labelColor=0b0f1a)
 
-3. Generate data locally (optional):
-
-```bash
-scripts/update_stats.py --owner ManoharKonala
-```
-
-4. Generate the terminal asset:
-
-```bash
-python scripts/generate_terminal.py --data data/stats.json --out assets/terminal/terminal.svg
-```
-
-5. Run tests:
-
-```bash
-pytest -q
-```
+### **Dev Tools**
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white&labelColor=0b0f1a)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white&labelColor=0b0f1a)
+![Tableau](https://img.shields.io/badge/Tableau-E97627?style=flat-square&logo=tableau&logoColor=white&labelColor=0b0f1a)
 
 ---
 
-## ⚙️ Overview of Workflows
-- `.github/workflows/dynamic-stats-updater.yml` — runs every 6 hours; updates `data/stats.json`.
-- `.github/workflows/interactive-element-manager.yml` — runs hourly; regenerates terminal assets from data.
-- `.github/workflows/featured-projects-curator.yml` — runs daily; picks top projects and refreshes `projects.json`.
-- `.github/workflows/visitor-engagement-tracker.yml` — runs on push; appends the push event and updates a short engagement log.
-- `.github/workflows/easter-egg-generator.yml` — runs weekly; rotates easter eggs.
+## 📊 GitHub Stats
+
+<div align="center">
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=ManoharKonala&show_icons=true&theme=radical&bg_color=0b0f1a&title_color=00e6ff&icon_color=ff2d95&text_color=ffffff&border_color=b388ff)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ManoharKonala&layout=compact&theme=radical&bg_color=0b0f1a&title_color=00e6ff&text_color=ffffff&border_color=b388ff)
+
+![GitHub Streak](https://github-readme-streak-stats.demolab.com/?user=ManoharKonala&theme=radical&background=0b0f1a&border=b388ff&ring=00e6ff&fire=ff2d95&currStreakLabel=00e6ff)
+
+![Contribution Graph](https://ghchart.rshah.org/ManoharKonala)
+
+</div>
 
 ---
 
-## 🧱 Implementation notes
-- Scripts are designed to be safe for GitHub Actions. They use `GITHUB_TOKEN` to authenticate and commit artifacts back to the repository.
-- All dynamic assets are pre-generated by Actions; the README references the generated `assets/terminal/terminal.svg` (static image in the repository), providing a visually interactive feel without client-side JS.
+## 🌟 Featured Projects
+
+### 1. **MCP-Server** | Model Context Protocol Server
+![Stars](https://img.shields.io/github/stars/ManoharKonala/MCP-Server?style=flat-square&labelColor=0b0f1a&color=00e6ff)
+![Language](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white&labelColor=0b0f1a)
+
+A Model Context Protocol (MCP) server implementation for handling AI model interactions. Built with Python, this server enables seamless communication between AI models and applications.
+
+**Tech Stack:** Python, MCP Protocol, AI Integration
+
+[![View Project](https://img.shields.io/badge/View_Project-00e6ff?style=for-the-badge&labelColor=0b0f1a)](https://github.com/ManoharKonala/MCP-Server)
 
 ---
 
-## ♿ Accessibility & Performance
-- All generated SVGs include accessible text nodes to help screen readers.
-- SVGs and images are optimized during generation for fast loads.
+### 2. **Task-Horizon** | Task Management Dashboard
+![Stars](https://img.shields.io/github/stars/ManoharKonala/Task-Horizon?style=flat-square&labelColor=0b0f1a&color=00e6ff)
+![Language](https://img.shields.io/badge/HTML-FF6B6B?style=flat-square&logo=html5&logoColor=white&labelColor=0b0f1a)
+
+Modern task management dashboard application with intuitive UI for organizing and tracking tasks efficiently.
+
+**Tech Stack:** HTML, CSS, JavaScript, Modern UI
+
+[![View Project](https://img.shields.io/badge/View_Project-00e6ff?style=for-the-badge&labelColor=0b0f1a)](https://github.com/ManoharKonala/Task-Horizon)
 
 ---
 
-## 🛠 Customization
-- Edit `scripts/generate_terminal.py` to change the textual content or the look of the terminal.
-- Customize `assets/terminal/styles.css` to match the cyberpunk theme.
+### 3. **CreditRiskPrediction** | AI-Powered Loan Approval System
+![Stars](https://img.shields.io/github/stars/ManoharKonala/CreditRiskPrediction?style=flat-square&labelColor=0b0f1a&color=00e6ff)
+![Language](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white&labelColor=0b0f1a)
+
+AI-powered loan approval system using XGBoost for credit risk assessment. Processes 200k+ records with reduced false positives by 18% using advanced feature engineering and target encoding.
+
+**Tech Stack:** Python, XGBoost, scikit-learn, SHAP, Jupyter, AWS
+
+**Highlights:**
+- Reduced false positives by 18% using XGBoost + target encoding
+- Processed 200k+ loan records
+- Deployed on AWS EC2 with Tableau dashboards
+
+[![View Project](https://img.shields.io/badge/View_Project-00e6ff?style=for-the-badge&labelColor=0b0f1a)](https://github.com/ManoharKonala/CreditRiskPrediction)
 
 ---
 
-## What's next
-- Confirm branch changes, review the scripts, and merge the PR to enable scheduled GitHub Actions runs.
-- If you'd like Option B–F instead, I can swap the interactive factor and rework the generator scripts.
+### 4. **Campaign-Lead-Predictor** | MBA Tech Campaign Analysis
+![Stars](https://img.shields.io/github/stars/ManoharKonala/Campaign-Lead-Predictor?style=flat-square&labelColor=0b0f1a&color=00e6ff)
+![Language](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white&labelColor=0b0f1a)
+
+MBA Tech campaign analysis and lead prediction system for optimizing marketing campaigns and identifying high-value leads.
+
+**Tech Stack:** Python, Machine Learning, Data Analysis
+
+[![View Project](https://img.shields.io/badge/View_Project-00e6ff?style=for-the-badge&labelColor=0b0f1a)](https://github.com/ManoharKonala/Campaign-Lead-Predictor)
 
 ---
 
-Made with ❤️ for the 0.01% GitHub profile.
+### 5. **livebenchmark** | Live GitHub Leaderboard
+![Stars](https://img.shields.io/github/stars/ManoharKonala/livebenchmark?style=flat-square&labelColor=0b0f1a&color=00e6ff)
+![Language](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white&labelColor=0b0f1a)
+
+Live GitHub leaderboard and benchmark tracking system with real-time updates. Deployed on Vercel.
+
+**Tech Stack:** TypeScript, Next.js, Vercel
+
+[![Live Demo](https://img.shields.io/badge/Live_Demo-ff2d95?style=for-the-badge&labelColor=0b0f1a)](https://v0-github-leaderboard-repo.vercel.app)
+[![View Project](https://img.shields.io/badge/View_Project-00e6ff?style=for-the-badge&labelColor=0b0f1a)](https://github.com/ManoharKonala/livebenchmark)
+
+---
+
+### 6. **DataInsightPro** | Advanced Data Analytics Platform
+![Stars](https://img.shields.io/github/stars/ManoharKonala/DataInsightPro?style=flat-square&labelColor=0b0f1a&color=00e6ff)
+![Language](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white&labelColor=0b0f1a)
+
+Advanced data insights and analytics platform for processing and visualizing complex datasets.
+
+**Tech Stack:** Python, Data Analysis, Visualization
+
+[![View Project](https://img.shields.io/badge/View_Project-00e6ff?style=for-the-badge&labelColor=0b0f1a)](https://github.com/ManoharKonala/DataInsightPro)
+
+---
+
+## 📈 What I'm Building
+
+- 🔄 **Real-time AI systems** with MCP protocol integration
+- 📊 **ML pipelines** for credit risk and campaign analysis
+- 🚀 **Scalable web applications** with modern tech stacks
+- 🤖 **AI-powered tools** for data engineering workflows
+
+---
+
+## 🏆 Certifications
+
+![Azure Data Fundamentals](https://img.shields.io/badge/Azure_Data_Fundamentals-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white&labelColor=0b0f1a)
+
+---
+
+## 📫 Connect With Me
+
+<div align="center">
+
+[![GitHub](https://img.shields.io/badge/GitHub-ManoharKonala-00e6ff?style=for-the-badge&logo=github&labelColor=0b0f1a)](https://github.com/ManoharKonala)
+[![Website](https://img.shields.io/badge/Website-Portfolio-ff2d95?style=for-the-badge&labelColor=0b0f1a)](https://v0-manohar-konala.vercel.app/)
+[![Email](https://img.shields.io/badge/Email-Contact-00e6ff?style=for-the-badge&labelColor=0b0f1a)](mailto:konalavrmanohar@gmail.com)
+
+</div>
+
+---
+
+<div align="center">
+
+**Based in India (IST) — open to collaborations** 🌏
+
+![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=ManoharKonala.ManoharKonala&left_color=0b0f1a&right_color=00e6ff)
+
+**Pulse. Build. Roar.** ⚡
+
+</div>
+
+---
+
+<div align="center">
+
+Made with ❤️ using GitHub Actions & Python
+
+</div>
