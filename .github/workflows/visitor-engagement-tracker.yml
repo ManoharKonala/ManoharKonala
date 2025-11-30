@@ -4,15 +4,26 @@ on:
   push:
   workflow_dispatch: {}
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
-  run:
+  record:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Record event
         run: |
           python - << 'PY'
-import os, json, datetime
+import os
+import json
+import datetime
 os.makedirs('data', exist_ok=True)
 path = 'data/engagement.json'
 try:
@@ -20,17 +31,30 @@ try:
         data = json.load(f)
 except Exception:
     data = []
-entry = { 'ts': datetime.datetime.utcnow().isoformat(), 'actor': os.environ.get('GITHUB_ACTOR') }
+entry = {'ts': datetime.datetime.utcnow().isoformat(), 'actor': os.environ.get('GITHUB_ACTOR')}
 data.append(entry)
 with open(path, 'w') as f:
     json.dump(data, f, indent=2)
 print('Wrote engagement entry')
 PY
-      - name: Commit
+
+      - name: Commit changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/engagement.json
-          git commit -m "chore: update engagement log" || echo 'No changes'
-          git push
+          git checkout -B elite-profile-scaffold
+          git add data/engagement.json || true
+          git commit -m "chore: update engagement log" || echo 'No changes to commit'
+          git push origin elite-profile-scaffold --force
 
+      - name: Create or update pull request (optional)
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Automation: update engagement log"
+          title: "Automated update: engagement" 
+          body: "Automated update of engagement logs"
+          base: main
+          branch: elite-profile-scaffold

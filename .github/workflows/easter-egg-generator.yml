@@ -2,28 +2,54 @@ name: easter-egg-generator
 
 on:
   schedule:
-    - cron: '0 18 * * 0' # weekly on Sunday 18:00 UTC
+    - cron: '0 18 * * 0'
   workflow_dispatch: {}
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
-  run:
+  generate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
+
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
       - name: Generate Easter Egg
         run: |
           python scripts/easteregg.py --out data/easter.json || python scripts/easteregg.py
-      - name: Commit
+
+      - name: Commit easter egg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/easter.json
+          git checkout -B elite-profile-scaffold
+          git add data/easter.json || true
           git commit -m "chore: update easter egg" || echo 'No changes to commit'
-          git push
+          git push origin elite-profile-scaffold --force
 
+      - name: Create or update pull request (optional)
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Automation: update easter egg"
+          title: "Automated update: easter egg"
+          body: "Automated easter egg rotation"
+          base: main
+          branch: elite-profile-scaffold

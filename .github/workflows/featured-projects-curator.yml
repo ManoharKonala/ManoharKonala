@@ -2,24 +2,37 @@ name: featured-projects-curator
 
 on:
   schedule:
-    - cron: '0 2 * * *' # every day at 02:00 UTC
+    - cron: '0 2 * * *'
   workflow_dispatch: {}
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
-  run:
+  curate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
+
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
       - name: Curate featured projects
         env:
           OWNER: 'ManoharKonala'
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python - << 'PY'
 import json, os
@@ -42,11 +55,24 @@ with open('data/projects.json', 'w') as f:
     json.dump({'featured': featured}, f, indent=2)
 print('Wrote data/projects.json')
 PY
-      - name: Commit
+
+      - name: Commit featured projects
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/projects.json
+          git checkout -B elite-profile-scaffold
+          git add data/projects.json || true
           git commit -m "chore: update featured projects" || echo 'No changes to commit'
-          git push
+          git push origin elite-profile-scaffold --force
 
+      - name: Create or update pull request (optional)
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Automation: update featured projects"
+          title: "Automated update: featured projects"
+          body: "Automated curation of featured projects"
+          base: main
+          branch: elite-profile-scaffold
