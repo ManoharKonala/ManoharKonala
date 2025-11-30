@@ -1,0 +1,77 @@
+{
+  "username": "ManoharKonala",
+  "name": "Konala Venkata Rama Manohar",
+  "email": "konalavrmanohar@gmail.com",
+  "website": "https://v0-manohar-konala.vercel.app/",
+  "bio": "Pulse. Build. Roar.",
+  "location": "India (IST)",
+  "palette": {
+    "background": "#0b0f1a",
+    "neonCyan": "#00e6ff",
+    "electricMagenta": "#ff2d95",
+    "softViolet": "#b388ff"
+  },
+  "font": {
+    "primary": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "monospace": "'Fira Code', 'Courier New', monospace"
+  },
+  "featuredProjects": [
+    {
+      "name": "MCP-Server",
+      "repo": "ManoharKonala/MCP-Server",
+      "description": "A Model Context Protocol (MCP) server implementation for handling AI model interactions",
+      "tech": ["Python", "MCP", "AI"],
+      "stars": 1,
+      "demo": null
+    },
+    {
+      "name": "Task-Horizon",
+      "repo": "ManoharKonala/Task-Horizon",
+      "description": "Task management dashboard application with modern UI",
+      "tech": ["HTML", "CSS", "JavaScript"],
+      "stars": 1,
+      "demo": null
+    },
+    {
+      "name": "CreditRiskPrediction",
+      "repo": "ManoharKonala/CreditRiskPrediction",
+      "description": "AI-powered loan approval system using XGBoost for credit risk assessment",
+      "tech": ["Python", "XGBoost", "scikit-learn", "Jupyter"],
+      "stars": 1,
+      "demo": null
+    },
+    {
+      "name": "Campaign-Lead-Predictor",
+      "repo": "ManoharKonala/Campaign-Lead-Predictor",
+      "description": "MBA Tech campaign analysis and lead prediction system",
+      "tech": ["Python", "ML", "Data Analysis"],
+      "stars": 0,
+      "demo": null
+    },
+    {
+      "name": "livebenchmark",
+      "repo": "ManoharKonala/livebenchmark",
+      "description": "Live GitHub leaderboard and benchmark tracking system",
+      "tech": ["TypeScript", "Next.js", "Vercel"],
+      "stars": 1,
+      "demo": "https://v0-github-leaderboard-repo.vercel.app"
+    },
+    {
+      "name": "DataInsightPro",
+      "repo": "ManoharKonala/DataInsightPro",
+      "description": "Advanced data insights and analytics platform",
+      "tech": ["Python", "Data Analysis", "Visualization"],
+      "stars": 1,
+      "demo": null
+    }
+  ],
+  "skills": {
+    "languages": ["Python", "SQL", "JavaScript", "TypeScript", "Java", "HTML/CSS"],
+    "ml_data": ["XGBoost", "scikit-learn", "SHAP", "pandas", "NumPy", "Jupyter"],
+    "cloud_infra": ["AWS", "Azure", "Docker", "GitHub Actions"],
+    "dev_tools": ["Node.js", "MongoDB", "Git", "Tableau"]
+  },
+  "certifications": [
+    "Azure Data Fundamentals"
+  ]
+}
