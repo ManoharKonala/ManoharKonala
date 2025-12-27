@@ -58,11 +58,11 @@
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=ManoharKonala&show_icons=true&theme=radical&bg_color=0b0f1a&title_color=00e6ff&icon_color=ff2d95&text_color=ffffff&border_color=b388ff)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=ManoharKonala&show_icons=true&theme=radical&bg_color=0b0f1a&title_color=00e6ff&icon_color=ff2d95&text_color=ffffff&border_color=b388ff&cache_seconds=86400)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ManoharKonala&layout=compact&theme=radical&bg_color=0b0f1a&title_color=00e6ff&text_color=ffffff&border_color=b388ff)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ManoharKonala&layout=compact&theme=radical&bg_color=0b0f1a&title_color=00e6ff&text_color=ffffff&border_color=b388ff&cache_seconds=86400)
 
-![GitHub Streak](https://github-readme-streak-stats.demolab.com/?user=ManoharKonala&theme=radical&background=0b0f1a&border=b388ff&ring=00e6ff&fire=ff2d95&currStreakLabel=00e6ff)
+![GitHub Streak](https://streak-stats.demolab.com/?user=ManoharKonala&theme=radical&background=0b0f1a&border=b388ff&ring=00e6ff&fire=ff2d95&currStreakLabel=00e6ff)
 
 ![Contribution Graph](https://ghchart.rshah.org/ManoharKonala)
 
