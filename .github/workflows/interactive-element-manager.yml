@@ -8,8 +8,12 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
@@ -28,4 +32,3 @@ jobs:
           git add assets/terminal/terminal.svg
           git commit -m "chore: update terminal SVG" || echo 'No changes to commit'
           git push
-
